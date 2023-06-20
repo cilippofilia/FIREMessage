@@ -23,7 +23,9 @@ struct MessageBubble: View {
             }
             .frame(maxWidth: 300, alignment: message.received ? .leading : .trailing)
             .onTapGesture {
-                showTime.toggle()
+                withAnimation {
+                    showTime.toggle()
+                }
             }
 
             if showTime {
